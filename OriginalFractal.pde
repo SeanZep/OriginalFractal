@@ -8,7 +8,9 @@ public int fractal(int x){
 	if(x > 10000)
 		return 1;
 	else{
-		ellipse(x, x, x, 10);
-		return fractal(2*x);
+		ellipse(x, x, x, x+10);
+		translate(5, 5);
+		rotate(25);
+		return fractal(x+5);
 	}
 }
