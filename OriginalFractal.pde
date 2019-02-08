@@ -1,16 +1,17 @@
 public void setup(){
-	size(1000, 1000);
+	size(500, 500);
 }
 public void draw(){
-	fractal(1);
+	fractal(125, 125, 250);
 }
-public int fractal(int x){
-	if(x > 10000)
-		return 1;
+public void fractal(int x, int y, int len){
+	if(len<50)
+		rect(x, y, len, len, 5);
 	else{
-		ellipse(x, x, x, x+10);
-		translate(5, 5);
-		rotate(25);
-		return fractal(x+5);
+		rect(x, y, len, len, 5);
+		fractal(x-len/4, y+len/4, len/2);
+		fractal(x+len/4, y-len/4, len/2);
+		fractal(x+(len-len/4), y+len/4, len/2);
+		fractal(x+len/4, y+(len-len/4), len/2);
 	}
 }
