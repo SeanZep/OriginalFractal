@@ -1,14 +1,9 @@
-public int wheel = 250;
 public void setup(){
 	size(500, 500);
 }
 public void draw(){
 	background(152);
-	fractal(0, 0, wheel);
-}
-public void mouseWheel(MouseEvent event){
-	
-	wheel = wheel + event.getCount()*100;
+	fractal(0, 0, mouseY*10);
 }
 public void fractal(int x, int y, int len){
 	if(len<30)
